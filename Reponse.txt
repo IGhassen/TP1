@@ -1,0 +1,57 @@
+
+(1) Que fait la commande git status ? Et dans votre cas ?
+La commande `git status` affiche la branche sur laquelle on se trouve, les fichiers non suivis (Untracked), ceux pouvant être ajoutés (`add`), et précise si aucun fichier n'est prêt à être commit. 
+Dans mon cas, elle montre que je suis sur la branche "develop", que `reponses.txt` est Untracked (rouge), donc non encore ajouté.
+
+(2) Que remarquez-vous par rapport au 1er git status ?
+Après avoir utilisé `git add`, `git status` affiche les fichiers prêts à être commit (en vert), tandis que les fichiers non ajoutés restent affichés en rouge.
+
+(3) Où sont partis vos ajouts après git add . ?
+Ils sont allés dans le staging area (zone d'index), c’est-à-dire la zone intermédiaire entre le travail local (working directory) et le commit.
+
+(4) Réalisez votre premier commit :
+Après avoir tapé `git commit`, j’ai utilisé l’éditeur Vim : j’ai entré le message, appuyé sur `Échap`, puis tapé `:wq` suivi de `Entrée` pour valider le commit.
+
+(5) Quelle commande avez-vous utilisé pour voir la liste des commits ?
+Commande : `git log`
+
+(6) Différence entre git diff et git diff --staged :
+- `git diff` compare les différences entre la version actuelle dans le working directory et la dernière version commitée.
+- `git diff --staged` compare la version indexée (staging area) avec le dernier commit.
+
+(7) Différences entre git show, git status, git diff, git log :
+- `git show` : affiche les détails d’un commit précis (message, modifications, auteur).
+- `git status` : montre l’état des fichiers (modifiés, ajoutés, non suivis).
+- `git diff` : compare les modifications non encore ajoutées (working directory vs HEAD).
+- `git log` : liste tous les commits et leurs messages associés.
+
+(8) Résultat après git add . et git status :
+La commande `git status` indique que les deux fichiers `fichier1.txt` et `brouillon.txt` peuvent être commit (affichés en vert).
+
+(9) Que fait git reset brouillon.txt ?
+`git reset brouillon.txt` retire ce fichier du staging area et le remet dans le working directory. Il n'est plus en attente de commit.
+
+(10) Commande pour s'assurer que brouillon.txt n'a pas été commit :
+Commande : `git status`. Le fichier `brouillon.txt` est affiché en rouge, donc il n’a été ni ajouté ni commit.
+
+(11) Commandes utilisées pour vérifier les ajouts et commits :
+Commande : `git status`
+
+(12) Vérification des commits poussés sur GitHub :
+Commandes utilisées : `git status` pour vérifier l'état local, et `git log --oneline` pour voir l’historique rapide des commits.
+
+(13) Commande pour cloner le dépôt :
+`git clone https://github.com/PaulineLam24/TP-Git.git`
+
+(14) Fichiers et commits trouvés dans le dépôt cloné :
+Commande : `ls`
+Fichier trouvé : `README.md`
+Commandes : `git log --oneline`
+Commits trouvés :
+- 6fb7d35 Correctif README.md
+- 13c140d Ajout dans README.md
+- d8aae8d Initial commit
+
+(15) Modifications entre les commits :
+Commande utilisée : `git diff 6fb7d35 13c140d`
+Résultat : il y a eu une modification dans le fichier `README.md`, où une ligne a été remplacée par : "# Ceci est un fichier README.md..."
